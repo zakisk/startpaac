@@ -613,7 +613,7 @@ all() {
   if [[ ${CI_MODE} == "true" ]] && [[ -n ${PAC_SECOND_SECRET_FOLDER:-} ]] && [[ -e ${PAC_SECOND_SECRET_FOLDER}/github-application-id ]]; then
     INSTALL_GITHUB_SECOND_CTRL=true
   fi
-  [[ ${INSTALL_GITHUB_SECOND_CTRL} == "true" ]] && install_github_second_ctrl
+  [[ ${INSTALL_GITHUB_SECOND_CTRL} == "false" || ${INSTALL_GITHUB_SECOND_CTRL} == "" ]] || install_github_second_ctrl
 
   if [[ "${USE_NODEPORT_WEBHOOK}" != "true" ]]; then
     start_user_gosmee gosmee
